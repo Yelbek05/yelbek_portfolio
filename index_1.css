@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.about_projects{
+    background-color:#f5f5f5 ;
+}
+body{
+    background-color: #ffffff;
+    font-family: "Poppins", sans-serif;
+}
+
+.about h2, .about p {
+    color: #000000; /* Black for text in the "About" section */
+}
+
+.about_education h2, .about_education p {
+    color: #000000; /* Black for text in the "Education" section */
+}
+
+.about_language h2, .about_language p {
+    color: #000000;
+}
+
+.about_tech_skills h2 {
+    color: #000000;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header{
+    padding: 0 20px;
+    background-color: #1d1f1d;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+ 
+#brand {
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+#brand a{
+    color: #09c372;
+}
+
+ul{
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul a{
+    color: #ffffff;
+}
+
+ul li{
+    padding: 5px;
+    padding-bottom: 30px;
+    margin-left: 10px;
+}
+
+ul li:hover {
+    transform: scale(1,1.25);
+    transition: 0.3s;
+} 
+
+
+.nav-item a{
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.about-link {
+    font-weight: bold;
+    color: #ffa500;
+}
+
+.projects-link {
+    color: #00bfff;
+}
+
+.contact-link {
+    color: #ff4500;
+}
+
+#hamburger-icon{
+    margin: auto 0;
+    cursor: pointer;
+    display: none;
+}
+
+#hamburger-icon div{
+    width: 35px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+    opacity: 0;
+}
+
+.open .bar3{
+    -webkit-transform: rotate(45deg) translate(-6px, 8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-menu{
+    position: fixed;
+    top:6vh;
+    right:0;
+    height: 15vh;
+    width:150px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.mobile-menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu a{
+    color:#1d1f1d;
+}
+.mobile-menu li{
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    header nav {
+        display: none;
+    }
+    #hamburger-icon{
+        display: block;
+    }
+}
+
+
+.container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width:95%;
+    padding: 2rem;
+    border: 1px;
+}
+
+.about img{
+    width: 40%; 
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    min-width:16rem;
+}
+.about_1, 
+.about_2{
+    text-align: center;
+}
+
+.about_contact{
+    padding: 20px;
+    margin: 20px;
+}
+
+.about_contact h2{
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.contact-item img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 0.5rem;
+}
+.contact-item a{
+    font-size: 1rem;
+    color: #333;
+    word-wrap: break-word;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item a:hover {
+    color: #0073eb;
+}
+
+
+
+
+/* tablet and Desktop versions */
+@media(min-width: 800px){
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height:auto;
+    max-width:75%;
+    padding: 2rem;
+}
+.contact-item {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.about_3{
+    margin: 0 auto;
+    padding: 0 6rem;
+}
+}
+
+
+@media(min-width: 1200px){
+    body{
+        overflow-x: hidden;
+    }
+    
+    .container{
+        max-width: 1230px;
+        margin: 0 auto;
+    }
+    .about_3{
+        margin: 0 auto;
+        padding: 0 10rem;
+    }
+
+}
+
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 5rem) 
+}
+
+
